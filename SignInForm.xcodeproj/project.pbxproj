@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EF2FF791A3B8C72006F9124 /* backgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2FF781A3B8C72006F9124 /* backgroundImage.jpg */; };
+		2EF2FF7C1A3B95F5006F9124 /* SFCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2FF7B1A3B95F5006F9124 /* SFCustomTextField.m */; };
 		8416822E1A3AF7A300944183 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416822D1A3AF7A300944183 /* main.m */; };
 		841682311A3AF7A300944183 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841682301A3AF7A300944183 /* AppDelegate.m */; };
 		841682341A3AF7A300944183 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841682331A3AF7A300944183 /* ViewController.m */; };
@@ -24,7 +26,6 @@
 		841682661A3AF8A900944183 /* SFCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 841682651A3AF8A900944183 /* SFCoreDataHelper.m */; };
 		8416826A1A3AFCAE00944183 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841682691A3AFCAE00944183 /* SignInViewController.m */; };
 		8416826D1A3AFCC400944183 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416826C1A3AFCC400944183 /* SignUpViewController.m */; };
-		8416826F1A3B03E000944183 /* backgroundImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8416826E1A3B03E000944183 /* backgroundImage.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2EF2FF781A3B8C72006F9124 /* backgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundImage.jpg; sourceTree = "<group>"; };
+		2EF2FF7A1A3B95F5006F9124 /* SFCustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCustomTextField.h; sourceTree = "<group>"; };
+		2EF2FF7B1A3B95F5006F9124 /* SFCustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCustomTextField.m; sourceTree = "<group>"; };
 		841682281A3AF7A300944183 /* SignInForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignInForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8416822C1A3AF7A300944183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8416822D1A3AF7A300944183 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,7 +72,6 @@
 		841682691A3AFCAE00944183 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		8416826B1A3AFCC400944183 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		8416826C1A3AFCC400944183 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
-		8416826E1A3B03E000944183 /* backgroundImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = backgroundImage.jpeg; path = ../backgroundImage.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +97,9 @@
 		8416821F1A3AF7A200944183 = {
 			isa = PBXGroup;
 			children = (
-				8416826E1A3B03E000944183 /* backgroundImage.jpeg */,
+				2EF2FF7A1A3B95F5006F9124 /* SFCustomTextField.h */,
+				2EF2FF7B1A3B95F5006F9124 /* SFCustomTextField.m */,
+				2EF2FF781A3B8C72006F9124 /* backgroundImage.jpg */,
 				8416826B1A3AFCC400944183 /* SignUpViewController.h */,
 				8416826C1A3AFCC400944183 /* SignUpViewController.m */,
 				841682681A3AFCAE00944183 /* SignInViewController.h */,
@@ -259,7 +264,7 @@
 				841682371A3AF7A300944183 /* Main.storyboard in Resources */,
 				8416823C1A3AF7A300944183 /* LaunchScreen.xib in Resources */,
 				841682391A3AF7A300944183 /* Images.xcassets in Resources */,
-				8416826F1A3B03E000944183 /* backgroundImage.jpeg in Resources */,
+				2EF2FF791A3B8C72006F9124 /* backgroundImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +285,7 @@
 				8416826A1A3AFCAE00944183 /* SignInViewController.m in Sources */,
 				841682571A3AF82A00944183 /* SFCredentialsValidator.m in Sources */,
 				8416825D1A3AF85400944183 /* SFDrawingHelper.m in Sources */,
+				2EF2FF7C1A3B95F5006F9124 /* SFCustomTextField.m in Sources */,
 				841682341A3AF7A300944183 /* ViewController.m in Sources */,
 				841682601A3AF86200944183 /* CredentialsModel.xcdatamodeld in Sources */,
 				841682661A3AF8A900944183 /* SFCoreDataHelper.m in Sources */,
@@ -480,6 +486,7 @@
 				8416824D1A3AF7A400944183 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8416824E1A3AF7A400944183 /* Build configuration list for PBXNativeTarget "SignInFormTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +495,7 @@
 				841682501A3AF7A400944183 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6E0895A9-F0DF-405F-B2A2-E7F2F881A292</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SignInForm</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1665988CD605A11BA90739AE1AD6143186E65230</key>
+		<string>https://github.com/Wooanna/SignInFormTelerik.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SignInForm.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1665988CD605A11BA90739AE1AD6143186E65230</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Wooanna/SignInFormTelerik.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1665988CD605A11BA90739AE1AD6143186E65230</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1665988CD605A11BA90739AE1AD6143186E65230</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SignInFormTelerik</string>
+		</dict>
+	</array>
+</dict>
+</plist>

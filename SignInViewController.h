@@ -1,16 +1,12 @@
-//
-//  SignInViewController.h
-//  SignInForm
-//
-//  Created by admin on 12/12/14.
-//  Copyright (c) 2014 admin. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 #import "SFCustomButton.h"
+#import "SFCustomTextField.h"
 
 @interface SignInViewController : UIViewController
-@property (strong, nonatomic) IBOutlet SFCustomButton *signUpButton;
-@property (strong, nonatomic) IBOutlet SFCustomButton *SignInButton;
+@property (weak, nonatomic) IBOutlet SFCustomButton *signUpButton;
+@property (weak, nonatomic) IBOutlet SFCustomButton *signInButton;
+@property (weak, nonatomic) IBOutlet SFCustomTextField *usernameField;
+@property (weak, nonatomic) IBOutlet SFCustomTextField *passwordField;
 
 @end
