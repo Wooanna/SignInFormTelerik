@@ -18,7 +18,7 @@ static NSString * const validSymbolsRegex = @"[A-Z0-9a-z_]*";
 NSCharacterSet *specialSymbols = nil;
 NSCharacterSet *numbers = nil;
 
-+(void)instantiate{
++(void)initialize{
     if (!specialSymbols) {
         specialSymbols = [NSCharacterSet characterSetWithCharactersInString:@".,/\[]=-+_)(*&^%$#@!?"];
     }
@@ -38,7 +38,7 @@ NSCharacterSet *numbers = nil;
 }
 
 -(Boolean)validateInputAsPassword:(NSString *)input {
-  
+    
     if ([input rangeOfCharacterFromSet:numbers].location == NSNotFound ||
         [input rangeOfCharacterFromSet:specialSymbols].location == NSNotFound) {
         arePasswordSymbolsValid = NO;

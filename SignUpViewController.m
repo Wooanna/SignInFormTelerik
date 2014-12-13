@@ -1,37 +1,38 @@
-//
-//  SignUpViewController.m
-//  SignInForm
-//
-//  Created by admin on 12/12/14.
-//  Copyright (c) 2014 admin. All rights reserved.
-//
-
 #import "SignUpViewController.h"
+#import "SFCredentialsValidator.h"
 
 @interface SignUpViewController ()
 
 @end
 
-@implementation SignUpViewController
+@implementation SignUpViewController{
+    
+    NSString* firstnameInput;
+    NSString* lastnameInput;
+    NSString* genderInput;
+    NSString* usernameInput;
+    NSString* passwordInput;
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.firstNameField.delegate = self;
+    self.lastNameField.delegate = self;
+    self.genderField.delegate = self;
+    self.usernameField.delegate = self;
+    self.passwordField.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

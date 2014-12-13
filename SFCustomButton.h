@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SFCustomButton : UIButton
-@property  (nonatomic, assign) CGFloat hue;
-@property  (nonatomic, assign) CGFloat saturation;
-@property  (nonatomic, assign) CGFloat brightness;
+
 @end
