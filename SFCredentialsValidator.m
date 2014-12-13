@@ -1,24 +1,19 @@
-//
-//  SFCredentialsValidator.m
-//  SignInForm
-//
-//  Created by admin on 12/12/14.
-//  Copyright (c) 2014 admin. All rights reserved.
-//
-
 #import "SFCredentialsValidator.h"
 
 @implementation SFCredentialsValidator
 
-bool arePasswordSymbolsValid, areUsernameSymbolsValid, isPasswordLengthValid, isUsernameLengthValid;
-
 static int const MIN_USERNAME_LENGTH = 3;
 static int const MIN_PASSWORD_LENGTH = 8;
-static NSString * const validSymbolsRegex = @"[A-Z0-9a-z_]*";
+static NSString * const validUsernameSymbolsRegex = @"[A-Z0-9a-z_]*";
+static NSString * const validNameSymbolsRegex = @"[A-Za-z_]*";
+static const NSArray* GENDER;
 NSCharacterSet *specialSymbols = nil;
 NSCharacterSet *numbers = nil;
 
 +(void)initialize{
+    if (!GENDER) {
+        GENDER = [NSArray arrayWithObject:@[@"male", @"female", @"m", @"f", @"other"]];
+    }
     if (!specialSymbols) {
         specialSymbols = [NSCharacterSet characterSetWithCharactersInString:@".,/\[]=-+_)(*&^%$#@!?"];
     }
@@ -26,7 +21,6 @@ NSCharacterSet *numbers = nil;
         numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
     }
 }
-
 
 +(id)sharedValidator{
     static SFCredentialsValidator *sharedValidator = nil;
@@ -41,37 +35,52 @@ NSCharacterSet *numbers = nil;
     
     if ([input rangeOfCharacterFromSet:numbers].location == NSNotFound ||
         [input rangeOfCharacterFromSet:specialSymbols].location == NSNotFound) {
-        arePasswordSymbolsValid = NO;
-    }
-    else {
-        arePasswordSymbolsValid = YES;
+        return NO;
     }
     
     if (input.length < MIN_PASSWORD_LENGTH) {
-        isPasswordLengthValid = NO;
-    }
-    else{
-    isPasswordLengthValid = YES;
+        return NO;
     }
     
-    
-    return isPasswordLengthValid && arePasswordSymbolsValid;
+    return YES;
 };
 
 -(Boolean)validateInputAsUsername:(NSString *)input {
         
-    areUsernameSymbolsValid =
-    [[NSPredicate predicateWithFormat:@"SELF MATCHES %@", validSymbolsRegex] evaluateWithObject:input];
+   if(![[NSPredicate predicateWithFormat:@"SELF MATCHES %@", validUsernameSymbolsRegex] evaluateWithObject:input]){
+       return NO;
+   }
     
     if (input.length <= MIN_USERNAME_LENGTH) {
-        isUsernameLengthValid = NO;
-    }
-    else{
-    isUsernameLengthValid = YES;
+        return NO;
     }
     
-    return isUsernameLengthValid && areUsernameSymbolsValid;
+    return YES;
 };
+
+-(Boolean)validateInputAsFirstName:(NSString *)input{
+    return [self validateInputAsName:input];
+};
+
+-(Boolean)validateInputAsLastName:(NSString *)input{
+    return [self validateInputAsName:input];
+};
+
+-(Boolean)validateInputAsName:(NSString *)input{
+    if(input.length <= MIN_USERNAME_LENGTH){
+        return  NO;
+    }
+    if (![[NSPredicate predicateWithFormat:@"SELF MATCHES %@", validNameSymbolsRegex] evaluateWithObject:input]) {
+        return NO;
+    }
+    return YES;
+    
+}
+
+-(Boolean)validateInputAsGender:(NSString *)input{
+   return [GENDER containsObject: input];
+    
+}
 
 
 @end

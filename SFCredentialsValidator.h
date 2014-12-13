@@ -16,4 +16,12 @@
 
 -(Boolean)validateInputAsPassword: (NSString *) input;
 
+-(Boolean)validateInputAsFirstName:(NSString *)input;
+
+-(Boolean)validateInputAsLastName:(NSString *)input;
+
+-(Boolean)validateInputAsName:(NSString *)input;
+
+-(Boolean)validateInputAsGender:(NSString *)input;
+
 @end
