@@ -1,11 +1,3 @@
-//
-//  WelcomeViewController.m
-//  SignInForm
-//
-//  Created by apple1 on 12/13/14.
-//  Copyright (c) 2014 admin. All rights reserved.
-//
-
 #import "WelcomeViewController.h"
 
 @interface WelcomeViewController ()
@@ -16,22 +8,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+    [self.navigationController.navigationBar setBackgroundColor:[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.5]];
+    
+    [self styleNavBar];
+   }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)styleNavBar {
+   
+    UINavigationBar *newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 64.0)];
+    [newNavBar setTintColor:[UIColor whiteColor]];
+    UINavigationItem *newItem = [[UINavigationItem alloc] init];
+    
+    NSString* name = [self.userDetails objectForKey: @"lastname"];
+   // NSString* gender;
+   //TODO Make dictionary for GENDER
+    newItem.title = [NSString stringWithFormat: @"Hello, Mrs. %@", name];
+    
+        [newNavBar setItems:@[newItem]];
+    [self.view addSubview:newNavBar];
 }
-*/
 
 @end

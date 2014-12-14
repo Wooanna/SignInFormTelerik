@@ -1,5 +1,6 @@
 
 #import "SFCoreDataManager.h"
+#import "UserData.h"
 
 @implementation SFCoreDataManager
 
@@ -119,23 +120,47 @@ static SFCoreDataManager *coreDataManager;
 -(void)insertEntityWithEntityName:(NSString*)entityName andAttributesDictionary:(NSDictionary*) attributesDictionary;
 {
     
-    NSManagedObject *entity = [NSEntityDescription insertNewObjectForEntityForName:entityName
+     UserData *entity = [NSEntityDescription insertNewObjectForEntityForName:entityName
                                                             inManagedObjectContext:self.context];
     
-    for (id key in attributesDictionary) {
-        [entity setValue:[attributesDictionary objectForKey:key] forKey:key];
-       
-    }
+     //[entity setValue:[attributesDictionary valueForKey:@"username"] forKey:@"username"];
+     ////[entity setValue:[attributesDictionary valueForKey:@"password"] forKey:@"password"];
+    // [entity setValue:[attributesDictionary valueForKey:@"firstname"] forKey:@"firstname"];
+    // [entity setValue:[attributesDictionary valueForKey:@"lastname"] forKey:@"lastname"];
+    // [entity setValue:[attributesDictionary valueForKey:@"gender"] forKey:@"gender"];
+    
+    [entity setValue:@"wooanna" forKey:@"username"];
+    [entity setValue:@"wooanna1?" forKey:@"password"];
+    [entity setValue:@"joanna" forKey:@"firstname"];
+    [entity setValue:@"mareva" forKey:@"lastname"];
+    [entity setValue:@"f" forKey:@"gender"];
+
+    [self.context insertObject:entity];
+    
      [self saveContext];
     
     
 }
 
--(void)searchEntityWithEntityName:(NSString *)entityName andAttributesDictionary:(NSArray*) predicatesArray
+-(BOOL)hasEntityWithEntityName:(NSString *)entityName andPassword:(NSString*) password andUsername:(NSString*) username
 {
-    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    NSPredicate* predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicatesArray];
+    BOOL registerd;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName
+                                              inManagedObjectContext:self.context];
+    [fetchRequest setEntity:entity];
+    NSError *error = nil;
+    NSArray *results = [self.context executeFetchRequest:fetchRequest error:&error];
+   
+
     
-    [request setPredicate:predicate];
+    if (!results || error) {
+        registerd = NO;
+    }
+    else if(results.count == 1){
+        registerd = YES;
+    }
+    return registerd;
 }
+
 @end

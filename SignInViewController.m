@@ -2,12 +2,15 @@
 #import "SignInViewController.h"
 #import "SFCredentialsValidator.h"
 #import "SFAnimations.h"
+#import "SFCoreDataManager.h"
 
 @interface SignInViewController ()<UITextFieldDelegate>
 
 @end
 
-@implementation SignInViewController
+@implementation SignInViewController{
+    BOOL registered;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,8 +59,17 @@
         }
         
     }
+    
+    if(self.validSignInPassword && self.validSignInUsername){
+       registered =
+        [SFCoreDataManager.sharedManager hasEntityWithEntityName:@"UserData" andPassword:self.passwordField.text andUsername:self.usernameField.text];
+    }
+         
+   
 
-    [self AllowButtonWithButton:self.signInButton and:(self.validSignInPassword && self.validSignInUsername)];
+    BOOL registeredValidCredentials = self.validSignInPassword && self.validSignInUsername && registered;
+    
+    [self AllowButtonWithButton: self.signInButton and: registeredValidCredentials];
 
 }
 

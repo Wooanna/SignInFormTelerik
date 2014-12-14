@@ -2,13 +2,14 @@
 #import "SFCredentialsValidator.h"
 #import "SFAnimations.h"
 #import "SFCoreDataManager.h"
+#import "WelcomeViewController.h"
 
 @interface SignUpViewController ()<UITextFieldDelegate>
 
 @end
 
 @implementation SignUpViewController{
-    
+    NSDictionary* attributesDictionary;
 }
 
 const int FIRST_NAME_TAG = 3;
@@ -121,8 +122,17 @@ const int GENDER_TAG = 5;
 - (IBAction)doneButtonClicked:(id)sender {
     //REGISTERUSER
     [SFCoreDataManager.sharedManager setupCoreData];
-    NSDictionary* attributesDictionary = [NSDictionary dictionaryWithObjects:@[self.usernameField.text, self.passwordField.text, self.firstNameField.text, self.lastNameField.text, self.genderField.text]
+    attributesDictionary = [NSDictionary dictionaryWithObjects:@[self.usernameField.text, self.passwordField.text, self.firstNameField.text, self.lastNameField.text, self.genderField.text]
                                           forKeys:@[@"username", @"password", @"firstname", @"lastname", @"gender"]];
     [SFCoreDataManager.sharedManager insertEntityWithEntityName:@"UserData" andAttributesDictionary:attributesDictionary];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"FromSignUpToWelcomeSegue"]) {
+        WelcomeViewController *controller = (WelcomeViewController *)segue.destinationViewController;
+        controller.userDetails = attributesDictionary;
+        
+    }
 }
 @end

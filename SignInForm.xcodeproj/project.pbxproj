@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E184F511A3DCDAE00BB412F /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E184F501A3DCDAE00BB412F /* UserData.m */; };
 		2E2EBE031A3C685B00CB29BC /* SFAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2EBE021A3C685B00CB29BC /* SFAnimations.m */; };
 		2E2EBE061A3C72AA00CB29BC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2EBE051A3C72AA00CB29BC /* BaseViewController.m */; };
 		2E2EBE091A3C9C9800CB29BC /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2EBE081A3C9C9800CB29BC /* WelcomeViewController.m */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E184F4F1A3DCDAE00BB412F /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		2E184F501A3DCDAE00BB412F /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		2E2EBE011A3C685B00CB29BC /* SFAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAnimations.h; sourceTree = "<group>"; };
 		2E2EBE021A3C685B00CB29BC /* SFAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAnimations.m; sourceTree = "<group>"; };
 		2E2EBE041A3C72AA00CB29BC /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 		8416821F1A3AF7A200944183 = {
 			isa = PBXGroup;
 			children = (
+				2E184F4F1A3DCDAE00BB412F /* UserData.h */,
+				2E184F501A3DCDAE00BB412F /* UserData.m */,
 				2E2EBE711A3CC52100CB29BC /* UserDetails.xcdatamodeld */,
 				2E2EBE0A1A3CB80900CB29BC /* ViewControllers */,
 				2E2EBE011A3C685B00CB29BC /* SFAnimations.h */,
@@ -297,6 +302,7 @@
 			files = (
 				8416826A1A3AFCAE00944183 /* SignInViewController.m in Sources */,
 				841682571A3AF82A00944183 /* SFCredentialsValidator.m in Sources */,
+				2E184F511A3DCDAE00BB412F /* UserData.m in Sources */,
 				8416825D1A3AF85400944183 /* SFDrawingHelper.m in Sources */,
 				2EF2FF7C1A3B95F5006F9124 /* SFCustomTextField.m in Sources */,
 				2E2EBE731A3CC52100CB29BC /* UserDetails.xcdatamodeld in Sources */,

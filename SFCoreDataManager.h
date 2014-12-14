@@ -11,5 +11,5 @@
 - (void)saveContext;
 - (void)setupCoreData;
 -(void)insertEntityWithEntityName:(NSString*)entityName andAttributesDictionary:(NSDictionary*) attributesDictionary;
--(void)searchEntityWithEntityName:(NSString*)entityName andAttributesDictionary:(NSArray*) predicatesArray;
+-(BOOL)hasEntityWithEntityName:(NSString *)entityName andPassword:(NSString*) password andUsername:(NSString*) username;
 @end

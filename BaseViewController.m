@@ -51,7 +51,13 @@ int const SIGNUP_USERNAME_TAG = 7;
 - (void)ApplyBlurEffect {
     self.blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     self.blurEffectView = [[UIVisualEffectView alloc] initWithEffect:self.blurEffect];
-    self.blurEffectView.frame = self.backgroundImageView.bounds;
+    self.blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth |UIViewAutoresizingFlexibleHeight;
+    self.blurEffectView.frame =
+    CGRectMake(-self.backgroundImageView.frame.size.width,
+               0,
+               self.backgroundImageView.frame.size.width * 2,
+               self.backgroundImageView.frame.size.height * 2);
+    
     [self.backgroundImageView addSubview:self.blurEffectView];
 }
 

@@ -10,4 +10,6 @@
 
 @interface WelcomeViewController : BaseViewController
 
+@property (strong, nonatomic) NSDictionary* userDetails;
+
 @end

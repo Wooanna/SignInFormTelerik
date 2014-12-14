@@ -209,8 +209,7 @@
                                         <exclude reference="dEG-gf-i7r"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="152" y="280" width="192" height="45"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="dEG-gf-i7r"/>
                                     </mask>
@@ -228,8 +227,7 @@
                                         <exclude reference="Qzz-cO-K4Q"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="152" y="336" width="192" height="45"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Qzz-cO-K4Q"/>
                                     </mask>
@@ -247,8 +245,7 @@
                                         <exclude reference="W5k-K1-6ZA"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="152" y="389" width="192" height="45"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="W5k-K1-6ZA"/>
                                     </mask>
@@ -266,8 +263,7 @@
                                         <exclude reference="QLw-gh-ENB"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="152" y="230" width="192" height="45"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="QLw-gh-ENB"/>
                                     </mask>
@@ -285,8 +281,7 @@
                                         <exclude reference="F5s-fV-Rko"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="152" y="180" width="192" height="45"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="F5s-fV-Rko"/>
                                     </mask>
@@ -305,14 +300,14 @@
                                         <exclude reference="fwA-I3-Vbd"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="145" y="442" width="110" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="fwA-I3-Vbd"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <action selector="doneButtonClicked:" destination="Tug-KS-RRT" eventType="touchUpInside" id="915-k2-NqR"/>
+                                    <segue destination="izc-re-Dhs" kind="show" identifier="FromSignUpToWelcomeSegue" id="r4B-Li-72H"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -320,8 +315,12 @@
                         <constraints>
                             <constraint firstItem="2Lh-Th-d5z" firstAttribute="top" secondItem="TmO-96-QS1" secondAttribute="bottom" constant="5" id="18S-mr-hTo"/>
                             <constraint firstAttribute="trailing" secondItem="2Lh-Th-d5z" secondAttribute="trailing" constant="50" id="3ZL-9z-ong"/>
+                            <constraint firstItem="rkn-aj-QZl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WUo-8e-dwj" secondAttribute="top" constant="180" id="4OF-o0-Ntw"/>
                             <constraint firstItem="QIV-ln-QWO" firstAttribute="leading" secondItem="WUo-8e-dwj" secondAttribute="leading" constant="50" id="6t0-J8-w6J"/>
+                            <constraint firstItem="acW-wj-qol" firstAttribute="top" secondItem="WUo-8e-dwj" secondAttribute="top" constant="230" id="75y-J1-rrd"/>
+                            <constraint firstItem="QIV-ln-QWO" firstAttribute="top" secondItem="WUo-8e-dwj" secondAttribute="top" constant="280" id="Alh-Wu-IGV"/>
                             <constraint firstAttribute="trailing" secondItem="PaC-P1-lo4" secondAttribute="trailing" constant="130" id="CDF-Jj-prz"/>
+                            <constraint firstItem="TmO-96-QS1" firstAttribute="top" secondItem="WUo-8e-dwj" secondAttribute="top" constant="330" id="NGJ-gq-bq6"/>
                             <constraint firstAttribute="trailing" secondItem="acW-wj-qol" secondAttribute="trailing" constant="50" id="QiW-Oj-fqv"/>
                             <constraint firstAttribute="trailing" secondItem="TmO-96-QS1" secondAttribute="trailing" constant="50" id="Spg-D8-bSk"/>
                             <constraint firstItem="PaC-P1-lo4" firstAttribute="top" secondItem="2Lh-Th-d5z" secondAttribute="bottom" constant="5" id="Te2-Ob-vmR"/>
@@ -331,6 +330,8 @@
                             <constraint firstItem="rkn-aj-QZl" firstAttribute="top" secondItem="WUo-8e-dwj" secondAttribute="top" constant="180" id="l1U-MF-IwD"/>
                             <constraint firstItem="QIV-ln-QWO" firstAttribute="top" secondItem="acW-wj-qol" secondAttribute="bottom" constant="5" id="lzL-NK-y6S"/>
                             <constraint firstItem="TmO-96-QS1" firstAttribute="top" secondItem="QIV-ln-QWO" secondAttribute="bottom" constant="5" id="nMa-g7-igf"/>
+                            <constraint firstItem="2Lh-Th-d5z" firstAttribute="top" secondItem="WUo-8e-dwj" secondAttribute="top" constant="380" id="nUb-hr-KzS"/>
+                            <constraint firstItem="PaC-P1-lo4" firstAttribute="top" secondItem="WUo-8e-dwj" secondAttribute="top" constant="430" id="ndP-N7-OAE"/>
                             <constraint firstItem="acW-wj-qol" firstAttribute="leading" secondItem="WUo-8e-dwj" secondAttribute="leading" constant="50" id="p7g-am-qvD"/>
                             <constraint firstAttribute="trailing" secondItem="rkn-aj-QZl" secondAttribute="trailing" constant="50" id="rOF-ps-1DD"/>
                             <constraint firstAttribute="trailing" secondItem="QIV-ln-QWO" secondAttribute="trailing" constant="50" id="v8g-iD-48g"/>
@@ -347,23 +348,29 @@
                                 <exclude reference="PaC-P1-lo4"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="4OF-o0-Ntw"/>
                                 <exclude reference="UR5-W8-HUe"/>
                                 <exclude reference="l1U-MF-IwD"/>
                                 <exclude reference="rOF-ps-1DD"/>
+                                <exclude reference="75y-J1-rrd"/>
                                 <exclude reference="QiW-Oj-fqv"/>
                                 <exclude reference="p7g-am-qvD"/>
                                 <exclude reference="z6N-Bg-0w8"/>
                                 <exclude reference="6t0-J8-w6J"/>
+                                <exclude reference="Alh-Wu-IGV"/>
                                 <exclude reference="lzL-NK-y6S"/>
                                 <exclude reference="v8g-iD-48g"/>
+                                <exclude reference="NGJ-gq-bq6"/>
                                 <exclude reference="Spg-D8-bSk"/>
                                 <exclude reference="UzN-aZ-t3z"/>
                                 <exclude reference="nMa-g7-igf"/>
                                 <exclude reference="18S-mr-hTo"/>
                                 <exclude reference="3ZL-9z-ong"/>
                                 <exclude reference="Wh0-aV-RHE"/>
+                                <exclude reference="nUb-hr-KzS"/>
                                 <exclude reference="CDF-Jj-prz"/>
                                 <exclude reference="Te2-Ob-vmR"/>
+                                <exclude reference="ndP-N7-OAE"/>
                                 <exclude reference="yxD-nf-lTn"/>
                             </mask>
                         </variation>
@@ -377,23 +384,29 @@
                                 <include reference="PaC-P1-lo4"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="4OF-o0-Ntw"/>
                                 <include reference="UR5-W8-HUe"/>
                                 <include reference="l1U-MF-IwD"/>
                                 <include reference="rOF-ps-1DD"/>
+                                <include reference="75y-J1-rrd"/>
                                 <include reference="QiW-Oj-fqv"/>
                                 <include reference="p7g-am-qvD"/>
                                 <include reference="z6N-Bg-0w8"/>
                                 <include reference="6t0-J8-w6J"/>
+                                <include reference="Alh-Wu-IGV"/>
                                 <include reference="lzL-NK-y6S"/>
                                 <include reference="v8g-iD-48g"/>
+                                <include reference="NGJ-gq-bq6"/>
                                 <include reference="Spg-D8-bSk"/>
                                 <include reference="UzN-aZ-t3z"/>
                                 <include reference="nMa-g7-igf"/>
                                 <include reference="18S-mr-hTo"/>
                                 <include reference="3ZL-9z-ong"/>
                                 <include reference="Wh0-aV-RHE"/>
+                                <include reference="nUb-hr-KzS"/>
                                 <include reference="CDF-Jj-prz"/>
                                 <include reference="Te2-Ob-vmR"/>
+                                <include reference="ndP-N7-OAE"/>
                                 <include reference="yxD-nf-lTn"/>
                             </mask>
                         </variation>
@@ -414,16 +427,17 @@
         <!--Welcome View Controller-->
         <scene sceneID="P7Y-Yj-BPP">
             <objects>
+                <viewController restorationIdentifier="WellcomeView" storyboardIdentifier="WellcomeView" id="izc-re-Dhs" customClass="WelcomeViewController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cqc-fb-bfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="izc-re-Dhs" customClass="WelcomeViewController" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="2758.5" y="105"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Contoller-->
         <scene sceneID="fx8-wu-XG7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ycw-ZB-3Uw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ycw-ZB-3Uw" customClass="NavigationContoller" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cFu-65-q6O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -438,4 +452,7 @@
             <point key="canvasLocation" x="807" y="105"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="r4B-Li-72H"/>
+    </inferredMetricsTieBreakers>
 </document>
