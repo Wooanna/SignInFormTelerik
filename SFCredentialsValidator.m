@@ -12,7 +12,7 @@ NSCharacterSet *numbers = nil;
 
 +(void)initialize{
     if (!GENDER) {
-        GENDER = [NSArray arrayWithObject:@[@"male", @"female", @"m", @"f", @"other"]];
+        GENDER = [NSArray arrayWithObjects:@"male", @"female", @"m", @"f", @"other", nil];
     }
     if (!specialSymbols) {
         specialSymbols = [NSCharacterSet characterSetWithCharactersInString:@".,/\[]=-+_)(*&^%$#@!?"];
@@ -51,7 +51,7 @@ NSCharacterSet *numbers = nil;
        return NO;
    }
     
-    if (input.length <= MIN_USERNAME_LENGTH) {
+    if (input.length < MIN_USERNAME_LENGTH) {
         return NO;
     }
     

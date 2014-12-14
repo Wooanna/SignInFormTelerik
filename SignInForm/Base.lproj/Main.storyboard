@@ -64,6 +64,10 @@
                                         <include reference="5pr-W6-HrB"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="signInButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IU9-SY-bjb"/>
+                                    <segue destination="izc-re-Dhs" kind="show" id="BxP-ZH-zQp"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVa-Pk-Cal" customClass="SFCustomTextField">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -171,10 +175,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ydn-zY-PCW"/>
                     <connections>
-                        <outlet property="passwordField" destination="Nwy-HW-Wbb" id="HYA-1T-nup"/>
+                        <outlet property="passwordField" destination="Nwy-HW-Wbb" id="Mcv-Ey-p6M"/>
                         <outlet property="signInButton" destination="lte-Mz-H1E" id="Zks-rH-R75"/>
                         <outlet property="signUpButton" destination="ej4-Gg-COE" id="Q3m-LV-ZL3"/>
-                        <outlet property="usernameField" destination="nVa-Pk-Cal" id="oyA-Lv-ZHf"/>
+                        <outlet property="usernameField" destination="nVa-Pk-Cal" id="WTe-nw-qfm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -307,6 +311,9 @@
                                         <include reference="fwA-I3-Vbd"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="doneButtonClicked:" destination="Tug-KS-RRT" eventType="touchUpInside" id="915-k2-NqR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -392,13 +399,25 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="doneButton" destination="PaC-P1-lo4" id="JWB-tT-eTV"/>
                         <outlet property="firstNameField" destination="rkn-aj-QZl" id="gcD-p5-GkG"/>
+                        <outlet property="genderField" destination="QIV-ln-QWO" id="egB-oS-XBr"/>
                         <outlet property="lastNameField" destination="acW-wj-qol" id="EXB-eg-c00"/>
+                        <outlet property="passwordField" destination="2Lh-Th-d5z" id="fIV-i9-SAm"/>
+                        <outlet property="usernameField" destination="TmO-96-QS1" id="5TF-0N-h43"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3E-k1-65B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2094" y="105"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="P7Y-Yj-BPP">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cqc-fb-bfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="izc-re-Dhs" customClass="WelcomeViewController" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="2758.5" y="105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fx8-wu-XG7">

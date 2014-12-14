@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2EBE031A3C685B00CB29BC /* SFAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2EBE021A3C685B00CB29BC /* SFAnimations.m */; };
+		2E2EBE061A3C72AA00CB29BC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2EBE051A3C72AA00CB29BC /* BaseViewController.m */; };
+		2E2EBE091A3C9C9800CB29BC /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2EBE081A3C9C9800CB29BC /* WelcomeViewController.m */; };
+		2E2EBE731A3CC52100CB29BC /* UserDetails.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E2EBE711A3CC52100CB29BC /* UserDetails.xcdatamodeld */; };
 		2EF2FF791A3B8C72006F9124 /* backgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EF2FF781A3B8C72006F9124 /* backgroundImage.jpg */; };
 		2EF2FF7C1A3B95F5006F9124 /* SFCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2FF7B1A3B95F5006F9124 /* SFCustomTextField.m */; };
 		8416822E1A3AF7A300944183 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416822D1A3AF7A300944183 /* main.m */; };
 		841682311A3AF7A300944183 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841682301A3AF7A300944183 /* AppDelegate.m */; };
-		841682341A3AF7A300944183 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841682331A3AF7A300944183 /* ViewController.m */; };
 		841682371A3AF7A300944183 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841682351A3AF7A300944183 /* Main.storyboard */; };
 		841682391A3AF7A300944183 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841682381A3AF7A300944183 /* Images.xcassets */; };
 		8416823C1A3AF7A300944183 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8416823A1A3AF7A300944183 /* LaunchScreen.xib */; };
@@ -21,9 +24,7 @@
 		841682571A3AF82A00944183 /* SFCredentialsValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 841682561A3AF82A00944183 /* SFCredentialsValidator.m */; };
 		8416825A1A3AF84000944183 /* SFCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 841682591A3AF84000944183 /* SFCustomButton.m */; };
 		8416825D1A3AF85400944183 /* SFDrawingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416825C1A3AF85400944183 /* SFDrawingHelper.m */; };
-		841682601A3AF86200944183 /* CredentialsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8416825E1A3AF86200944183 /* CredentialsModel.xcdatamodeld */; };
-		841682631A3AF89100944183 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 841682621A3AF89100944183 /* Credentials.m */; };
-		841682661A3AF8A900944183 /* SFCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 841682651A3AF8A900944183 /* SFCoreDataHelper.m */; };
+		841682661A3AF8A900944183 /* SFCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 841682651A3AF8A900944183 /* SFCoreDataManager.m */; };
 		8416826A1A3AFCAE00944183 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841682691A3AFCAE00944183 /* SignInViewController.m */; };
 		8416826D1A3AFCC400944183 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416826C1A3AFCC400944183 /* SignUpViewController.m */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E2EBE011A3C685B00CB29BC /* SFAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFAnimations.h; sourceTree = "<group>"; };
+		2E2EBE021A3C685B00CB29BC /* SFAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFAnimations.m; sourceTree = "<group>"; };
+		2E2EBE041A3C72AA00CB29BC /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		2E2EBE051A3C72AA00CB29BC /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		2E2EBE071A3C9C9800CB29BC /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		2E2EBE081A3C9C9800CB29BC /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		2E2EBE721A3CC52100CB29BC /* UserDetails.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserDetails.xcdatamodel; sourceTree = "<group>"; };
 		2EF2FF781A3B8C72006F9124 /* backgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundImage.jpg; sourceTree = "<group>"; };
 		2EF2FF7A1A3B95F5006F9124 /* SFCustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCustomTextField.h; sourceTree = "<group>"; };
 		2EF2FF7B1A3B95F5006F9124 /* SFCustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCustomTextField.m; sourceTree = "<group>"; };
@@ -47,8 +55,6 @@
 		8416822D1A3AF7A300944183 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8416822F1A3AF7A300944183 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		841682301A3AF7A300944183 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		841682321A3AF7A300944183 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		841682331A3AF7A300944183 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		841682361A3AF7A300944183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		841682381A3AF7A300944183 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8416823B1A3AF7A300944183 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -63,11 +69,8 @@
 		841682591A3AF84000944183 /* SFCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCustomButton.m; sourceTree = "<group>"; };
 		8416825B1A3AF85300944183 /* SFDrawingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDrawingHelper.h; sourceTree = "<group>"; };
 		8416825C1A3AF85400944183 /* SFDrawingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDrawingHelper.m; sourceTree = "<group>"; };
-		8416825F1A3AF86200944183 /* CredentialsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CredentialsModel.xcdatamodel; sourceTree = "<group>"; };
-		841682611A3AF89100944183 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
-		841682621A3AF89100944183 /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
-		841682641A3AF8A900944183 /* SFCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCoreDataHelper.h; sourceTree = "<group>"; };
-		841682651A3AF8A900944183 /* SFCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCoreDataHelper.m; sourceTree = "<group>"; };
+		841682641A3AF8A900944183 /* SFCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFCoreDataManager.h; sourceTree = "<group>"; };
+		841682651A3AF8A900944183 /* SFCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFCoreDataManager.m; sourceTree = "<group>"; };
 		841682681A3AFCAE00944183 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		841682691A3AFCAE00944183 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		8416826B1A3AFCC400944183 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -94,18 +97,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8416821F1A3AF7A200944183 = {
+		2E2EBE0A1A3CB80900CB29BC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2EF2FF7A1A3B95F5006F9124 /* SFCustomTextField.h */,
-				2EF2FF7B1A3B95F5006F9124 /* SFCustomTextField.m */,
-				2EF2FF781A3B8C72006F9124 /* backgroundImage.jpg */,
 				8416826B1A3AFCC400944183 /* SignUpViewController.h */,
 				8416826C1A3AFCC400944183 /* SignUpViewController.m */,
 				841682681A3AFCAE00944183 /* SignInViewController.h */,
 				841682691A3AFCAE00944183 /* SignInViewController.m */,
+				2E2EBE071A3C9C9800CB29BC /* WelcomeViewController.h */,
+				2E2EBE081A3C9C9800CB29BC /* WelcomeViewController.m */,
+				2E2EBE041A3C72AA00CB29BC /* BaseViewController.h */,
+				2E2EBE051A3C72AA00CB29BC /* BaseViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8416821F1A3AF7A200944183 = {
+			isa = PBXGroup;
+			children = (
+				2E2EBE711A3CC52100CB29BC /* UserDetails.xcdatamodeld */,
+				2E2EBE0A1A3CB80900CB29BC /* ViewControllers */,
+				2E2EBE011A3C685B00CB29BC /* SFAnimations.h */,
+				2E2EBE021A3C685B00CB29BC /* SFAnimations.m */,
+				2EF2FF7A1A3B95F5006F9124 /* SFCustomTextField.h */,
+				2EF2FF7B1A3B95F5006F9124 /* SFCustomTextField.m */,
+				2EF2FF781A3B8C72006F9124 /* backgroundImage.jpg */,
 				841682671A3AF8BD00944183 /* CoreDataHelpers */,
-				8416825E1A3AF86200944183 /* CredentialsModel.xcdatamodeld */,
 				8416825B1A3AF85300944183 /* SFDrawingHelper.h */,
 				8416825C1A3AF85400944183 /* SFDrawingHelper.m */,
 				841682581A3AF84000944183 /* SFCustomButton.h */,
@@ -134,8 +151,6 @@
 			children = (
 				8416822F1A3AF7A300944183 /* AppDelegate.h */,
 				841682301A3AF7A300944183 /* AppDelegate.m */,
-				841682321A3AF7A300944183 /* ViewController.h */,
-				841682331A3AF7A300944183 /* ViewController.m */,
 				841682351A3AF7A300944183 /* Main.storyboard */,
 				841682381A3AF7A300944183 /* Images.xcassets */,
 				8416823A1A3AF7A300944183 /* LaunchScreen.xib */,
@@ -173,10 +188,8 @@
 		841682671A3AF8BD00944183 /* CoreDataHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				841682641A3AF8A900944183 /* SFCoreDataHelper.h */,
-				841682651A3AF8A900944183 /* SFCoreDataHelper.m */,
-				841682611A3AF89100944183 /* Credentials.h */,
-				841682621A3AF89100944183 /* Credentials.m */,
+				841682641A3AF8A900944183 /* SFCoreDataManager.h */,
+				841682651A3AF8A900944183 /* SFCoreDataManager.m */,
 			);
 			name = CoreDataHelpers;
 			sourceTree = "<group>";
@@ -286,12 +299,13 @@
 				841682571A3AF82A00944183 /* SFCredentialsValidator.m in Sources */,
 				8416825D1A3AF85400944183 /* SFDrawingHelper.m in Sources */,
 				2EF2FF7C1A3B95F5006F9124 /* SFCustomTextField.m in Sources */,
-				841682341A3AF7A300944183 /* ViewController.m in Sources */,
-				841682601A3AF86200944183 /* CredentialsModel.xcdatamodeld in Sources */,
-				841682661A3AF8A900944183 /* SFCoreDataHelper.m in Sources */,
+				2E2EBE731A3CC52100CB29BC /* UserDetails.xcdatamodeld in Sources */,
+				2E2EBE091A3C9C9800CB29BC /* WelcomeViewController.m in Sources */,
+				2E2EBE061A3C72AA00CB29BC /* BaseViewController.m in Sources */,
+				841682661A3AF8A900944183 /* SFCoreDataManager.m in Sources */,
+				2E2EBE031A3C685B00CB29BC /* SFAnimations.m in Sources */,
 				841682311A3AF7A300944183 /* AppDelegate.m in Sources */,
 				8416822E1A3AF7A300944183 /* main.m in Sources */,
-				841682631A3AF89100944183 /* Credentials.m in Sources */,
 				8416826D1A3AFCC400944183 /* SignUpViewController.m in Sources */,
 				8416825A1A3AF84000944183 /* SFCustomButton.m in Sources */,
 			);
@@ -500,13 +514,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8416825E1A3AF86200944183 /* CredentialsModel.xcdatamodeld */ = {
+		2E2EBE711A3CC52100CB29BC /* UserDetails.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8416825F1A3AF86200944183 /* CredentialsModel.xcdatamodel */,
+				2E2EBE721A3CC52100CB29BC /* UserDetails.xcdatamodel */,
 			);
-			currentVersion = 8416825F1A3AF86200944183 /* CredentialsModel.xcdatamodel */;
-			path = CredentialsModel.xcdatamodeld;
+			currentVersion = 2E2EBE721A3CC52100CB29BC /* UserDetails.xcdatamodel */;
+			path = UserDetails.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

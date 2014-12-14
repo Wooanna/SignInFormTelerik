@@ -1,16 +1,25 @@
-//
-//  SFCoreDataHelper.m
-//  SignInForm
-//
-//  Created by admin on 12/12/14.
-//  Copyright (c) 2014 admin. All rights reserved.
-//
 
-#import "SFCoreDataHelper.h"
+#import "SFCoreDataManager.h"
 
-@implementation SFCoreDataHelper
+@implementation SFCoreDataManager
 
-NSString *storeFilename = @"CDatabase.sqlite";
+NSString *storeFilename = @"SFDatabase.sqlite";
+
+static SFCoreDataManager *coreDataManager;
+
++ (instancetype)sharedManager
+{
+    if (!coreDataManager) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            coreDataManager = [[SFCoreDataManager alloc] init];
+           
+        });
+        
+    }
+    
+    return coreDataManager;
+}
 
 - (id)init {
     NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
@@ -41,7 +50,7 @@ NSString *storeFilename = @"CDatabase.sqlite";
     
     if (_store) {
         return;
-    } // Don’t load store if it's already loaded
+    }
     
     NSError *error = nil;
     _store = [_coordinator addPersistentStoreWithType:NSSQLiteStoreType
@@ -105,5 +114,28 @@ NSString *storeFilename = @"CDatabase.sqlite";
         }
     }
     return storesDirectory;
+}
+
+-(void)insertEntityWithEntityName:(NSString*)entityName andAttributesDictionary:(NSDictionary*) attributesDictionary;
+{
+    
+    NSManagedObject *entity = [NSEntityDescription insertNewObjectForEntityForName:entityName
+                                                            inManagedObjectContext:self.context];
+    
+    for (id key in attributesDictionary) {
+        [entity setValue:[attributesDictionary objectForKey:key] forKey:key];
+       
+    }
+     [self saveContext];
+    
+    
+}
+
+-(void)searchEntityWithEntityName:(NSString *)entityName andAttributesDictionary:(NSArray*) predicatesArray
+{
+    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:entityName];
+    NSPredicate* predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicatesArray];
+    
+    [request setPredicate:predicate];
 }
 @end
