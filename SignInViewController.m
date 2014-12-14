@@ -1,15 +1,15 @@
-
 #import "SignInViewController.h"
 #import "SFCredentialsValidator.h"
 #import "SFAnimations.h"
 #import "SFCoreDataManager.h"
+#import "WelcomeViewController.h"
 
 @interface SignInViewController ()<UITextFieldDelegate>
 
 @end
 
 @implementation SignInViewController{
-    BOOL registered;
+    BOOL registeredUser;
 }
 
 - (void)viewDidLoad {
@@ -27,15 +27,15 @@
                            action:@selector(ValidateInput:)
                  forControlEvents:UIControlEventEditingChanged];
     
-     [SFCoreDataManager.sharedManager setupCoreData];
-   
-   }
+    [SFCoreDataManager.sharedManager setupCoreData];
+    
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [self.passwordField resignFirstResponder];
     [self.usernameField resignFirstResponder];
-        return YES;
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,16 +63,23 @@
     }
     
     if(self.validSignInPassword && self.validSignInUsername){
-       registered =
+        registeredUser =
         [SFCoreDataManager.sharedManager hasEntityWithEntityName:@"UserData" andPassword:self.passwordField.text andUsername:self.usernameField.text];
     }
-         
-   
-
-    BOOL registeredValidCredentials = self.validSignInPassword && self.validSignInUsername && registered;
+    
+    BOOL registeredValidCredentials = self.validSignInPassword && self.validSignInUsername && registeredUser;
     
     [self AllowButtonWithButton: self.signInButton and: registeredValidCredentials];
+    
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"FromSignInToWelcomeSegue"]) {
+        WelcomeViewController *controller = (WelcomeViewController *)segue.destinationViewController;
+        controller.registeredUser =
+        [SFCoreDataManager.sharedManager loggedUserDataWithPassword:self.passwordField.text andUsername:self.usernameField.text];
+    }
 }
 
 - (IBAction)signInButtonClicked:(id)sender {

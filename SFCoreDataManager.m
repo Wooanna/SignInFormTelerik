@@ -13,7 +13,7 @@ static SFCoreDataManager *coreDataManager;
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             coreDataManager = [[SFCoreDataManager alloc] init];
-           
+            
         });
         
     }
@@ -118,16 +118,16 @@ static SFCoreDataManager *coreDataManager;
 
 -(void)insertEntityWithEntityName:(NSString*)entityName andAttributesDictionary:(NSDictionary*) attributesDictionary;
 {
-       
-     UserData *entity = [NSEntityDescription insertNewObjectForEntityForName:entityName
-                                                            inManagedObjectContext:self.context];
+    
+    UserData *entity = [NSEntityDescription insertNewObjectForEntityForName:entityName
+                                                     inManagedObjectContext:self.context];
     
     [entity setValue:[attributesDictionary valueForKey:@"username"] forKey:@"username"];
     [entity setValue:[attributesDictionary valueForKey:@"password"] forKey:@"password"];
     [entity setValue:[attributesDictionary valueForKey:@"firstname"] forKey:@"firstname"];
     [entity setValue:[attributesDictionary valueForKey:@"lastname"] forKey:@"lastname"];
     [entity setValue:[attributesDictionary valueForKey:@"gender"] forKey:@"gender"];
-   
+    
     [self.context insertObject:entity];
     
     [self saveContext];
@@ -136,10 +136,10 @@ static SFCoreDataManager *coreDataManager;
 
 -(BOOL)hasEntityWithEntityName:(NSString *)entityName andPassword:(NSString*) password andUsername:(NSString*) username
 {
-    BOOL registerd;
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *obj = [NSEntityDescription entityForName:@"UserData"
-                                              inManagedObjectContext:self.context];
+                                           inManagedObjectContext:self.context];
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"username LIKE %@ and password LIKE %@",username, password];
     
     [fetchRequest setEntity:obj];
@@ -147,14 +147,38 @@ static SFCoreDataManager *coreDataManager;
     
     NSError *error = nil;
     NSArray *results = [self.context executeFetchRequest:fetchRequest error:&error];
-  
+    
     if (!results || error) {
-        registerd = NO;
+        return NO;
     }
     else if(results.count >= 1){
-        registerd = YES;
+        return YES;
     }
-    return registerd;
+    return NO;
+    
+}
+
+-(NSDictionary*)loggedUserDataWithPassword:(NSString*)password andUsername:(NSString*)username{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *obj = [NSEntityDescription entityForName:@"UserData"
+                                           inManagedObjectContext:self.context];
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"username LIKE %@ and password LIKE %@",username, password];
+    
+    [fetchRequest setEntity:obj];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *results = [self.context executeFetchRequest:fetchRequest error:&error];
+    UserData* user;
+    if (!results || error) {
+        return nil;
+    }
+    else if(results.count >= 1){
+        user = results[0];
+    }
+    return [NSDictionary dictionaryWithObjects:@[user.gender, user.lastname] forKeys:@[@"gender", @"lastname"]];
+    
+    
 }
 
 @end

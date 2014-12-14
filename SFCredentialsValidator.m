@@ -46,10 +46,10 @@ NSCharacterSet *numbers = nil;
 };
 
 -(Boolean)validateInputAsUsername:(NSString *)input {
-        
-   if(![[NSPredicate predicateWithFormat:@"SELF MATCHES %@", validUsernameSymbolsRegex] evaluateWithObject:input]){
-       return NO;
-   }
+    
+    if(![[NSPredicate predicateWithFormat:@"SELF MATCHES %@", validUsernameSymbolsRegex] evaluateWithObject:input]){
+        return NO;
+    }
     
     if (input.length < MIN_USERNAME_LENGTH) {
         return NO;
@@ -78,9 +78,8 @@ NSCharacterSet *numbers = nil;
 }
 
 -(Boolean)validateInputAsGender:(NSString *)input{
-   return [GENDER containsObject: input];
+    return [GENDER containsObject: input];
     
 }
-
 
 @end

@@ -1,15 +1,8 @@
-//
-//  WelcomeViewController.h
-//  SignInForm
-//
-//  Created by apple1 on 12/13/14.
-//  Copyright (c) 2014 admin. All rights reserved.
-//
-
 #import "BaseViewController.h"
+#import "UserData.h"
 
 @interface WelcomeViewController : BaseViewController
 
-@property (strong, nonatomic) NSDictionary* userDetails;
+@property (strong, nonatomic) NSDictionary* registeredUser;
 
 @end

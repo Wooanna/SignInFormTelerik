@@ -6,11 +6,23 @@
 
 @interface SignUpViewController ()<UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *firstNameFieldTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lastnamefieldTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *genderFieldTopAlignment;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *usernameFieldTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *passwordFieldTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *doneButtonTopConstraint;
+
 @end
 
 @implementation SignUpViewController{
+    
     NSDictionary* attributesDictionary;
-    BOOL registered;
+    BOOL registeredUser;
+    BOOL validFirstName;
+    BOOL validLastName;
+    BOOL validGender;
+    BOOL validInput;
 }
 
 const int FIRST_NAME_TAG = 3;
@@ -31,7 +43,7 @@ const int GENDER_TAG = 5;
     self.genderField.tag = GENDER_TAG;
     self.passwordField.tag = SIGNUP_PASSWORD_TAG;
     self.usernameField.tag = SIGNUP_USERNAME_TAG;
-
+    
     [self.usernameField addTarget:self
                            action:@selector(ValidateInput:)
                  forControlEvents:UIControlEventEditingChanged];
@@ -39,20 +51,20 @@ const int GENDER_TAG = 5;
                            action:@selector(ValidateInput:)
                  forControlEvents:UIControlEventEditingChanged];
     [self.firstNameField addTarget:self
-                           action:@selector(ValidateInput:)
-                 forControlEvents:UIControlEventEditingChanged];
+                            action:@selector(ValidateInput:)
+                  forControlEvents:UIControlEventEditingChanged];
     [self.lastNameField addTarget:self
                            action:@selector(ValidateInput:)
                  forControlEvents:UIControlEventEditingChanged];
     [self.genderField addTarget:self
-                           action:@selector(ValidateInput:)
-                 forControlEvents:UIControlEventEditingChanged];
+                         action:@selector(ValidateInput:)
+               forControlEvents:UIControlEventEditingChanged];
     
-    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-   
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -67,7 +79,7 @@ const int GENDER_TAG = 5;
 }
 
 -(void)ValidateInput:(UITextField *)textField{
-   
+    
     if(textField.tag == SIGNUP_PASSWORD_TAG){
         if([SFCredentialsValidator.sharedValidator validateInputAsPassword:textField.text]){
             self.validSignUpPassword = YES;
@@ -88,48 +100,48 @@ const int GENDER_TAG = 5;
     }
     else if(textField.tag == GENDER_TAG){
         if([SFCredentialsValidator.sharedValidator validateInputAsGender:textField.text]){
-            self.validGender = YES;
+            validGender = YES;
         }
         else{
-            self.validGender = NO;
+            validGender = NO;
         }
         
     }
     else if(textField.tag == LAST_NAME_TAG){
         if([SFCredentialsValidator.sharedValidator validateInputAsLastName:textField.text]){
-            self.validLastName = YES;
+            validLastName = YES;
         }
         else{
-            self.validLastName = NO;
+            validLastName = NO;
         }
         
     }
     else if(textField.tag == FIRST_NAME_TAG){
         if([SFCredentialsValidator.sharedValidator validateInputAsFirstName:textField.text]){
-            self.validFirstName = YES;
+            validFirstName = YES;
         }
         else{
-            self.validFirstName = NO;
+            validFirstName = NO;
         }
         
     }
-
-     self.validInput = self.validSignUpPassword && self.validSignUpUsername && self.validLastName && self.validFirstName && self.validGender;
-      if(self.validInput)
-      {
-          registered =
-          [SFCoreDataManager.sharedManager hasEntityWithEntityName:@"UserData" andPassword:self.passwordField.text andUsername:self.usernameField.text];
-      }
     
-     [self AllowButtonWithButton:self.doneButton and:(self.validInput && !registered)];
+    validInput = self.validSignUpPassword && self.validSignUpUsername && validLastName && validFirstName && validGender;
+    if(validInput)
+    {
+        registeredUser =
+        [SFCoreDataManager.sharedManager hasEntityWithEntityName:@"UserData" andPassword:self.passwordField.text andUsername:self.usernameField.text];
+    }
+    
+    [self AllowButtonWithButton:self.doneButton and:(validInput && !registeredUser)];
 }
 
 
 - (IBAction)doneButtonClicked:(id)sender {
     //REGISTERUSER
-
+    
     attributesDictionary = [NSDictionary dictionaryWithObjects:@[self.usernameField.text, self.passwordField.text, self.firstNameField.text, self.lastNameField.text, self.genderField.text]
-                                          forKeys:@[@"username", @"password", @"firstname", @"lastname", @"gender"]];
+                                                       forKeys:@[@"username", @"password", @"firstname", @"lastname", @"gender"]];
     [SFCoreDataManager.sharedManager insertEntityWithEntityName:@"UserData" andAttributesDictionary:attributesDictionary];
 }
 
@@ -137,8 +149,29 @@ const int GENDER_TAG = 5;
 {
     if ([segue.identifier isEqualToString:@"FromSignUpToWelcomeSegue"]) {
         WelcomeViewController *controller = (WelcomeViewController *)segue.destinationViewController;
-        controller.userDetails = attributesDictionary;
+        controller.registeredUser = attributesDictionary;
         
     }
 }
+
+- (void)updateViewConstraints {
+    [super updateViewConstraints];
+    
+    self.firstNameFieldTopConstraint.constant =
+    [UIScreen mainScreen].bounds.size.height > 480.0f ? 180 : 110;
+    self.lastnamefieldTopConstraint.constant =
+    [UIScreen mainScreen].bounds.size.height > 480.0f ? 230 : 140;
+    self.genderFieldTopAlignment.constant =
+    [UIScreen mainScreen].bounds.size.height > 480.0f ? 280 : 170;
+    self.usernameFieldTopConstraint.constant =
+    [UIScreen mainScreen].bounds.size.height > 480.0f ? 330 : 200;
+    self.passwordFieldTopConstraint.constant =
+    [UIScreen mainScreen].bounds.size.height > 480.0f ? 380 : 230;
+    self.doneButtonTopConstraint.constant =
+    [UIScreen mainScreen].bounds.size.height > 480.0f ? 430 : 260;
+    
+    
+}
+
+
 @end

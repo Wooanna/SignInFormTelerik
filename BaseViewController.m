@@ -7,9 +7,10 @@
 
 @end
 
-@implementation BaseViewController
-
-const int KEYBOARD_OFFSET = 150;
+@implementation BaseViewController{
+    
+    int KEYBOARD_OFFSET;
+}
 int const SIGNIN_PASSWORD_TAG = 1;
 int const SIGNIN_USERNAME_TAG = 2;
 int const SIGNUP_PASSWORD_TAG = 6;
@@ -30,13 +31,13 @@ int const SIGNUP_USERNAME_TAG = 7;
     [self SetBackgroundImage];
     [self ApplyBlurEffect];
     [[self navigationController] setNavigationBarHidden:YES];
-  
+    KEYBOARD_OFFSET = [UIScreen mainScreen].bounds.size.height > 480.0f ? 150 : 90;
+    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    }
+}
 
 - (void)SetBackgroundImage {
     self.backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"backgroundImage.jpg"]];
@@ -81,7 +82,5 @@ int const SIGNUP_USERNAME_TAG = 7;
     [SFAnimations slideView:self.view withOffsetY: 0];
     [SFAnimations slideView:self.backgroundImageView withOffsetY:0];
 }
-
-
 
 @end

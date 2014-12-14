@@ -18,6 +18,6 @@
     </entity>
     <elements>
         <element name="UserData" positionX="-54" positionY="-9" width="128" height="118"/>
-        <element name="Entity1" positionX="-36" positionY="9" width="128" height="28"/>
+        <element name="Entity1" positionX="-45" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

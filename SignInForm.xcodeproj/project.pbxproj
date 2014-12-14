@@ -118,9 +118,6 @@
 		8416821F1A3AF7A200944183 = {
 			isa = PBXGroup;
 			children = (
-				2E184F4F1A3DCDAE00BB412F /* UserData.h */,
-				2E184F501A3DCDAE00BB412F /* UserData.m */,
-				2E2EBE711A3CC52100CB29BC /* UserDetails.xcdatamodeld */,
 				2E2EBE0A1A3CB80900CB29BC /* ViewControllers */,
 				2E2EBE011A3C685B00CB29BC /* SFAnimations.h */,
 				2E2EBE021A3C685B00CB29BC /* SFAnimations.m */,
@@ -193,6 +190,9 @@
 		841682671A3AF8BD00944183 /* CoreDataHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				2E184F4F1A3DCDAE00BB412F /* UserData.h */,
+				2E184F501A3DCDAE00BB412F /* UserData.m */,
+				2E2EBE711A3CC52100CB29BC /* UserDetails.xcdatamodeld */,
 				841682641A3AF8A900944183 /* SFCoreDataManager.h */,
 				841682651A3AF8A900944183 /* SFCoreDataManager.m */,
 			);

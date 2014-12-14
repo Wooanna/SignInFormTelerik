@@ -22,7 +22,7 @@
                                     <constraint firstAttribute="height" constant="50" id="U2b-gp-rQy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Sign Up">
+                                <state key="normal" title="Sign up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -39,7 +39,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="Tug-KS-RRT" kind="show" id="XXj-ag-oiZ"/>
+                                    <segue destination="Tug-KS-RRT" kind="show" identifier="FromSignUpToWelcomeSegue" id="XXj-ag-oiZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lte-Mz-H1E" customClass="SFCustomButton">
@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="50" id="5pr-W6-HrB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Sign In">
+                                <state key="normal" title="Sign in">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -66,7 +66,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="signInButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IU9-SY-bjb"/>
-                                    <segue destination="izc-re-Dhs" kind="show" id="BxP-ZH-zQp"/>
+                                    <segue destination="izc-re-Dhs" kind="show" identifier="FromSignInToWelcomeSegue" id="BxP-ZH-zQp"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVa-Pk-Cal" customClass="SFCustomTextField">
@@ -251,7 +251,7 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acW-wj-qol" customClass="SFCustomTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acW-wj-qol" customClass="SFCustomTextField">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="QLw-gh-ENB"/>
@@ -293,6 +293,7 @@
                                     <constraint firstAttribute="height" constant="50" id="fwA-I3-Vbd"/>
                                 </constraints>
                                 <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -315,11 +316,10 @@
                         <constraints>
                             <constraint firstItem="2Lh-Th-d5z" firstAttribute="top" secondItem="TmO-96-QS1" secondAttribute="bottom" constant="5" id="18S-mr-hTo"/>
                             <constraint firstAttribute="trailing" secondItem="2Lh-Th-d5z" secondAttribute="trailing" constant="50" id="3ZL-9z-ong"/>
-                            <constraint firstItem="rkn-aj-QZl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WUo-8e-dwj" secondAttribute="top" constant="180" id="4OF-o0-Ntw"/>
                             <constraint firstItem="QIV-ln-QWO" firstAttribute="leading" secondItem="WUo-8e-dwj" secondAttribute="leading" constant="50" id="6t0-J8-w6J"/>
                             <constraint firstItem="acW-wj-qol" firstAttribute="top" secondItem="WUo-8e-dwj" secondAttribute="top" constant="230" id="75y-J1-rrd"/>
                             <constraint firstItem="QIV-ln-QWO" firstAttribute="top" secondItem="WUo-8e-dwj" secondAttribute="top" constant="280" id="Alh-Wu-IGV"/>
-                            <constraint firstAttribute="trailing" secondItem="PaC-P1-lo4" secondAttribute="trailing" constant="130" id="CDF-Jj-prz"/>
+                            <constraint firstAttribute="trailing" secondItem="PaC-P1-lo4" secondAttribute="trailing" constant="100" id="CDF-Jj-prz"/>
                             <constraint firstItem="TmO-96-QS1" firstAttribute="top" secondItem="WUo-8e-dwj" secondAttribute="top" constant="330" id="NGJ-gq-bq6"/>
                             <constraint firstAttribute="trailing" secondItem="acW-wj-qol" secondAttribute="trailing" constant="50" id="QiW-Oj-fqv"/>
                             <constraint firstAttribute="trailing" secondItem="TmO-96-QS1" secondAttribute="trailing" constant="50" id="Spg-D8-bSk"/>
@@ -335,7 +335,7 @@
                             <constraint firstItem="acW-wj-qol" firstAttribute="leading" secondItem="WUo-8e-dwj" secondAttribute="leading" constant="50" id="p7g-am-qvD"/>
                             <constraint firstAttribute="trailing" secondItem="rkn-aj-QZl" secondAttribute="trailing" constant="50" id="rOF-ps-1DD"/>
                             <constraint firstAttribute="trailing" secondItem="QIV-ln-QWO" secondAttribute="trailing" constant="50" id="v8g-iD-48g"/>
-                            <constraint firstItem="PaC-P1-lo4" firstAttribute="leading" secondItem="WUo-8e-dwj" secondAttribute="leading" constant="130" id="yxD-nf-lTn"/>
+                            <constraint firstItem="PaC-P1-lo4" firstAttribute="leading" secondItem="WUo-8e-dwj" secondAttribute="leading" constant="100" id="yxD-nf-lTn"/>
                             <constraint firstItem="acW-wj-qol" firstAttribute="top" secondItem="rkn-aj-QZl" secondAttribute="bottom" constant="5" id="z6N-Bg-0w8"/>
                         </constraints>
                         <variation key="default">
@@ -364,7 +364,6 @@
                                 <exclude reference="QiW-Oj-fqv"/>
                                 <exclude reference="p7g-am-qvD"/>
                                 <exclude reference="z6N-Bg-0w8"/>
-                                <exclude reference="4OF-o0-Ntw"/>
                                 <exclude reference="UR5-W8-HUe"/>
                                 <exclude reference="l1U-MF-IwD"/>
                                 <exclude reference="rOF-ps-1DD"/>
@@ -400,7 +399,6 @@
                                 <include reference="QiW-Oj-fqv"/>
                                 <include reference="p7g-am-qvD"/>
                                 <include reference="z6N-Bg-0w8"/>
-                                <include reference="4OF-o0-Ntw"/>
                                 <include reference="UR5-W8-HUe"/>
                                 <include reference="l1U-MF-IwD"/>
                                 <include reference="rOF-ps-1DD"/>
@@ -413,11 +411,17 @@
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="PaC-P1-lo4" id="JWB-tT-eTV"/>
+                        <outlet property="doneButtonTopConstraint" destination="ndP-N7-OAE" id="Wc7-ch-byL"/>
                         <outlet property="firstNameField" destination="rkn-aj-QZl" id="gcD-p5-GkG"/>
+                        <outlet property="firstNameFieldTopConstraint" destination="l1U-MF-IwD" id="uX4-ef-pc7"/>
                         <outlet property="genderField" destination="QIV-ln-QWO" id="egB-oS-XBr"/>
+                        <outlet property="genderFieldTopAlignment" destination="Alh-Wu-IGV" id="e6E-4j-qgz"/>
                         <outlet property="lastNameField" destination="acW-wj-qol" id="EXB-eg-c00"/>
+                        <outlet property="lastnamefieldTopConstraint" destination="75y-J1-rrd" id="bhI-UG-QVl"/>
                         <outlet property="passwordField" destination="2Lh-Th-d5z" id="fIV-i9-SAm"/>
+                        <outlet property="passwordFieldTopConstraint" destination="nUb-hr-KzS" id="08y-kx-WJz"/>
                         <outlet property="usernameField" destination="TmO-96-QS1" id="5TF-0N-h43"/>
+                        <outlet property="usernameFieldTopConstraint" destination="NGJ-gq-bq6" id="Io4-ea-z1y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3E-k1-65B" userLabel="First Responder" sceneMemberID="firstResponder"/>

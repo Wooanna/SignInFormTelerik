@@ -1,5 +1,3 @@
-
-
 #import "SFAnimations.h"
 
 @implementation SFAnimations
@@ -8,7 +6,7 @@
     
     [UIView animateWithDuration:0.3f animations:^ {
         view.frame = CGRectMake(0, offsetY, view.frame.size.width, view.frame.size.height);
-      
+        
     }];
 }
 
