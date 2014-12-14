@@ -1,4 +1,3 @@
-
 #import "SFCoreDataManager.h"
 #import "UserData.h"
 
@@ -119,26 +118,19 @@ static SFCoreDataManager *coreDataManager;
 
 -(void)insertEntityWithEntityName:(NSString*)entityName andAttributesDictionary:(NSDictionary*) attributesDictionary;
 {
-    
+       
      UserData *entity = [NSEntityDescription insertNewObjectForEntityForName:entityName
                                                             inManagedObjectContext:self.context];
     
-     //[entity setValue:[attributesDictionary valueForKey:@"username"] forKey:@"username"];
-     ////[entity setValue:[attributesDictionary valueForKey:@"password"] forKey:@"password"];
-    // [entity setValue:[attributesDictionary valueForKey:@"firstname"] forKey:@"firstname"];
-    // [entity setValue:[attributesDictionary valueForKey:@"lastname"] forKey:@"lastname"];
-    // [entity setValue:[attributesDictionary valueForKey:@"gender"] forKey:@"gender"];
-    
-    [entity setValue:@"wooanna" forKey:@"username"];
-    [entity setValue:@"wooanna1?" forKey:@"password"];
-    [entity setValue:@"joanna" forKey:@"firstname"];
-    [entity setValue:@"mareva" forKey:@"lastname"];
-    [entity setValue:@"f" forKey:@"gender"];
-
+    [entity setValue:[attributesDictionary valueForKey:@"username"] forKey:@"username"];
+    [entity setValue:[attributesDictionary valueForKey:@"password"] forKey:@"password"];
+    [entity setValue:[attributesDictionary valueForKey:@"firstname"] forKey:@"firstname"];
+    [entity setValue:[attributesDictionary valueForKey:@"lastname"] forKey:@"lastname"];
+    [entity setValue:[attributesDictionary valueForKey:@"gender"] forKey:@"gender"];
+   
     [self.context insertObject:entity];
     
-     [self saveContext];
-    
+    [self saveContext];
     
 }
 
@@ -146,18 +138,20 @@ static SFCoreDataManager *coreDataManager;
 {
     BOOL registerd;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName
+    NSEntityDescription *obj = [NSEntityDescription entityForName:@"UserData"
                                               inManagedObjectContext:self.context];
-    [fetchRequest setEntity:entity];
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"username LIKE %@ and password LIKE %@",username, password];
+    
+    [fetchRequest setEntity:obj];
+    [fetchRequest setPredicate:predicate];
+    
     NSError *error = nil;
     NSArray *results = [self.context executeFetchRequest:fetchRequest error:&error];
-   
-
-    
+  
     if (!results || error) {
         registerd = NO;
     }
-    else if(results.count == 1){
+    else if(results.count >= 1){
         registerd = YES;
     }
     return registerd;

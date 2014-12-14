@@ -10,6 +10,7 @@
 
 @implementation SignUpViewController{
     NSDictionary* attributesDictionary;
+    BOOL registered;
 }
 
 const int FIRST_NAME_TAG = 3;
@@ -114,14 +115,19 @@ const int GENDER_TAG = 5;
     }
 
      self.validInput = self.validSignUpPassword && self.validSignUpUsername && self.validLastName && self.validFirstName && self.validGender;
-
-     [self AllowButtonWithButton:self.doneButton and:self.validInput];
+      if(self.validInput)
+      {
+          registered =
+          [SFCoreDataManager.sharedManager hasEntityWithEntityName:@"UserData" andPassword:self.passwordField.text andUsername:self.usernameField.text];
+      }
+    
+     [self AllowButtonWithButton:self.doneButton and:(self.validInput && !registered)];
 }
 
 
 - (IBAction)doneButtonClicked:(id)sender {
     //REGISTERUSER
-    [SFCoreDataManager.sharedManager setupCoreData];
+
     attributesDictionary = [NSDictionary dictionaryWithObjects:@[self.usernameField.text, self.passwordField.text, self.firstNameField.text, self.lastNameField.text, self.genderField.text]
                                           forKeys:@[@"username", @"password", @"firstname", @"lastname", @"gender"]];
     [SFCoreDataManager.sharedManager insertEntityWithEntityName:@"UserData" andAttributesDictionary:attributesDictionary];

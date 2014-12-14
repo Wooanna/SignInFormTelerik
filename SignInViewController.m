@@ -26,6 +26,8 @@
     [self.passwordField addTarget:self
                            action:@selector(ValidateInput:)
                  forControlEvents:UIControlEventEditingChanged];
+    
+     [SFCoreDataManager.sharedManager setupCoreData];
    
    }
 
