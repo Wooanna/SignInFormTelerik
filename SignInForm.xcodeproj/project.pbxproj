@@ -115,22 +115,36 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		2E98EA6F1A3ED1580062C7DE /* CustomUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				841682581A3AF84000944183 /* SFCustomButton.h */,
+				841682591A3AF84000944183 /* SFCustomButton.m */,
+				2EF2FF7A1A3B95F5006F9124 /* SFCustomTextField.h */,
+				2EF2FF7B1A3B95F5006F9124 /* SFCustomTextField.m */,
+			);
+			name = CustomUIElements;
+			sourceTree = "<group>";
+		};
+		2E98EA701A3ED16C0062C7DE /* DrawingHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				8416825B1A3AF85300944183 /* SFDrawingHelper.h */,
+				8416825C1A3AF85400944183 /* SFDrawingHelper.m */,
+				2E2EBE011A3C685B00CB29BC /* SFAnimations.h */,
+				2E2EBE021A3C685B00CB29BC /* SFAnimations.m */,
+			);
+			name = DrawingHelpers;
+			sourceTree = "<group>";
+		};
 		8416821F1A3AF7A200944183 = {
 			isa = PBXGroup;
 			children = (
+				2E98EA701A3ED16C0062C7DE /* DrawingHelpers */,
+				2E98EA6F1A3ED1580062C7DE /* CustomUIElements */,
 				2E2EBE0A1A3CB80900CB29BC /* ViewControllers */,
-				2E2EBE011A3C685B00CB29BC /* SFAnimations.h */,
-				2E2EBE021A3C685B00CB29BC /* SFAnimations.m */,
-				2EF2FF7A1A3B95F5006F9124 /* SFCustomTextField.h */,
-				2EF2FF7B1A3B95F5006F9124 /* SFCustomTextField.m */,
 				2EF2FF781A3B8C72006F9124 /* backgroundImage.jpg */,
 				841682671A3AF8BD00944183 /* CoreDataHelpers */,
-				8416825B1A3AF85300944183 /* SFDrawingHelper.h */,
-				8416825C1A3AF85400944183 /* SFDrawingHelper.m */,
-				841682581A3AF84000944183 /* SFCustomButton.h */,
-				841682591A3AF84000944183 /* SFCustomButton.m */,
-				841682551A3AF82A00944183 /* SFCredentialsValidator.h */,
-				841682561A3AF82A00944183 /* SFCredentialsValidator.m */,
 				841682531A3AF80000944183 /* CoreGraphics.framework */,
 				841682511A3AF7F900944183 /* CoreData.framework */,
 				8416822A1A3AF7A300944183 /* SignInForm */,
@@ -190,6 +204,8 @@
 		841682671A3AF8BD00944183 /* CoreDataHelpers */ = {
 			isa = PBXGroup;
 			children = (
+				841682551A3AF82A00944183 /* SFCredentialsValidator.h */,
+				841682561A3AF82A00944183 /* SFCredentialsValidator.m */,
 				2E184F4F1A3DCDAE00BB412F /* UserData.h */,
 				2E184F501A3DCDAE00BB412F /* UserData.m */,
 				2E2EBE711A3CC52100CB29BC /* UserDetails.xcdatamodeld */,
